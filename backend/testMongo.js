@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const URI = "mongodb+srv://amarnadh:369082@cluster0.wbhb7.mongodb.net/food-fusion";
+const URI = "process.env.MONGO_URI;
 
 mongoose.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("✅ Connected to MongoDB"))
