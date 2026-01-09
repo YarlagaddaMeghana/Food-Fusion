@@ -69,7 +69,7 @@ app.options('*', cors(corsOptions));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // Database connection
-connectDB();
+connectDB(process.env.MONGO_URI);
 
 // API endpoints
 app.use("/api/food", foodRouter);
@@ -119,4 +119,3 @@ server.listen(port, () => {
   console.log(`✅ Server running in ${process.env.NODE_ENV || "development"} mode`);
   console.log(`🔗 Access endpoints at http://localhost:${port}`);
 });
-// mongodb+srv://amarnadh:369082@cluster0.wbhb7.mongodb.net/?
